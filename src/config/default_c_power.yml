@@ -65,7 +65,7 @@ sample_n: 2
 # seed: 100
 
 # special samples
-special: open # 'open' output special samples, 'shut' output normal samples 
+special: on # 'on' output special samples, 'off' output normal samples 
 special_num: 0
 
 fem_degree: 1

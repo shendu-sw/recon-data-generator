@@ -133,7 +133,7 @@ def get_parser_continuous_power(
     parser.add(
         "--special",
         type=type, 
-        default='shut',
+        default='off',
         help="generate special samples or not",
     )
     parser.add(

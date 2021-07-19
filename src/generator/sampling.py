@@ -228,7 +228,7 @@ def special_random_num(
     num_zero: int,
     special='shut',
 ):
-    if special == 'open':
+    if special == 'on':
         s = [x for x in range(0,num)]
         import random
         random.shuffle(s)
