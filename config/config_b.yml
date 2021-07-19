@@ -1,0 +1,108 @@
+# config example
+task: continuous
+
+# domain definition
+ndim: 2 # dimension
+length: 0.1
+nx: 200
+
+u_D: 298
+bcs: # default Neumann condition
+    - ['sink', [[0, 0], [0.1, 0]]]
+    - ['sink', [[0, 0], [0, 0.1]]]
+    - ['sink', [[0.1, 0], [0.1, 0.1]]]
+    - ['sine-wave', [[0, 0.1], [0.1, 0.1]], 15] # 2d example
+    #- ['sink', [[0, 0], [0, 0.1]]]
+    #- ['sink', [[0.1, 0], [0.1, 0.1]]]
+    #- ['sine-wave', [[0, 0.1], [0.1, 0.1]], 15] # 2d example
+
+# components definition
+units:  # unit shape
+    - [0.015, 0.015]
+    - [0.01, 0.02]
+    - [0.02, 0.03]
+    - [0.015, 0.02]
+    - [0.015, 0.03]
+    - [0.03, 0.015]
+    - [0.02, 0.02]
+    - [0.028, 0.028]
+    - [0.02, 0.02]
+    - [0.024, 0.024]
+
+powers:
+    #- ["uniform", 20000, 30000]  # 20000-30000 均匀采样 (不包括3000)
+    #- ["uniform", 10000, 20000, 100]  # 10000-20000间隔100采样，包括20000
+    #- [100000, 200000, 300000]  # 三者随机选一
+    #- 10000  # 固定
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+
+geometry:
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "capsule"
+    - "capsule"
+    - "capsule"
+    - "circle"
+    - "circle"
+    - "circle"
+    - "circle"
+    
+power_distribution:
+    - "uniform"
+    - "uniform"
+    - "uniform"
+    - "uniform"
+    - "uniform"
+    - "uniform"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+
+angles: 
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+
+positions_type: grid  # coord or grid
+positions:
+    - [32, 183]
+    - [185, 158]
+    - [165, 50]
+    - [145, 167]
+    - [72, 67]
+    - [42, 131]
+    - [93, 159]
+    - [120, 110]
+    - [34, 28]
+    - [110,28]
+
+gaussian_param: 1 # parameter in gaussian power distribution
+
+# utils
+data_dir: example_datasetb
+file_format: mat
+prefix: Example
+sample_n: 2
+# seed: 100
+
+fem_degree: 1
+
+method: fenics

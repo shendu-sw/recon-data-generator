@@ -1,0 +1,114 @@
+# config example
+task: continuous
+
+# domain definition
+ndim: 2 # dimension
+length: 0.1
+nx: 200
+
+u_D: 298
+bcs: # default Neumann condition
+    - ['sine-wave', [[0, 0.1], [0.1, 0.1]], 15] # 2d example
+
+# components definition
+units:  # unit shape
+    - [0.016, 0.012]
+    - [0.012, 0.015]
+    - [0.024, 0.024]
+    - [0.012, 0.024]
+    - [0.015, 0.012]
+    - [0.012, 0.024]
+    - [0.018, 0.018]
+    - [0.024, 0.012]
+    - [0.012, 0.012]
+    - [0.018, 0.018]
+    - [0.018, 0.012]
+    - [0.018, 0.009]
+
+powers:
+    #- ["uniform", 20000, 30000]  # 20000-30000 均匀采样 (不包括3000)
+    #- ["uniform", 10000, 20000, 100]  # 10000-20000间隔100采样，包括20000
+    #- [100000, 200000, 300000]  # 三者随机选一
+    #- 10000  # 固定
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+
+geometry:
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    - "rectangle"
+    
+power_distribution:
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+
+angles: 
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+
+positions_type: grid  # coord or grid
+positions:
+    - [38, 183]
+    - [175, 158]
+    - [90, 29]
+    - [160, 50]
+    - [137, 177]
+    - [72, 80]
+    - [30, 131]
+    - [85, 159]
+    - [120, 110]
+    - [34, 28]
+    - [72, 122]
+    - [122, 80]
+    
+gaussian_param: 1 # parameter in gaussian power distribution
+
+# utils
+data_dir: example_datasetc
+file_format: mat
+prefix: Example
+sample_n: 2
+# seed: 100
+
+fem_degree: 1
+
+method: fenics

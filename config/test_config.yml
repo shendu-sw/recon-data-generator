@@ -1,0 +1,73 @@
+# config example
+task: continuous
+
+# domain definition
+ndim: 2 # dimension
+length: 0.1
+nx: 200
+
+u_D: 298
+bcs: # default Neumann condition
+    - ['sink', [[0, 0], [0.1, 0]]]
+    - ['sink', [[0, 0], [0, 0.1]]]
+    - ['sink', [[0.1, 0], [0.1, 0.1]]]
+    - ['sine-wave', [[0, 0.1], [0.1, 0.1]], 15] # 2d example
+
+# components definition
+units:  # unit shape
+    - [0.012, 0.012]
+    - [0.03, 0.016]
+    - [0.015, 0.015]
+
+powers:
+    #- ["uniform", 20000, 30000]  # 20000-30000 均匀采样 (不包括3000)
+    #- ["uniform", 10000, 20000, 100]  # 10000-20000间隔100采样，包括20000
+    #- [100000, 200000, 300000]  # 三者随机选一
+    #- 10000  # 固定
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+    - ["uniform", 0, 30000]
+
+geometry:
+    - "rectangle"
+    - "capsule"
+    - "rectangle"
+    
+power_distribution:
+    - "gaussian"
+    - "gaussian"
+    - "gaussian"
+
+angles: 
+    - 0
+    - 30
+    - 60
+
+positions_type: grid  # coord or grid
+positions:
+    - [38, 183]
+    - [144, 158]
+    - [90, 50]
+    
+gaussian_param: 1 # parameter in gaussian power distribution
+
+# Sampling monitoring points
+monitoring_sampling:
+    #- ['random', 10]
+    - ['center', 5, 10]
+    #- ['uniform', 5, 5]
+
+# utils
+data_dir: example_dataset
+file_format: mat
+prefix: Example
+sample_n: 2
+# seed: 100
+
+# special samples
+special: open # 'open' output special samples, 'shut' output normal samples 
+special_num: 0
+
+fem_degree: 1
+
+method: fenics

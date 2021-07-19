@@ -10,5 +10,4 @@ src/plot/__pycache__
 src/version/__pycache__
 example_dataset/
 example*/
-config/
 output/
