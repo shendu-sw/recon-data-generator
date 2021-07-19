@@ -2,7 +2,12 @@
 
 > This project is based on [FEniCS](https://fenicsproject.org) and used for data generation of temperature field reconstruction samples.
 
+## 样例（samples）
+
+![1](https://i.loli.net/2021/07/19/5Kv4xTfXQza8yFC.png)
+
 ## 功能支持（Support functions）
+
 * 可配置选项
     * [ ] 布局板尺寸
         * [x] 二维
