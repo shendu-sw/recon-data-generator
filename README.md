@@ -4,7 +4,7 @@
 
 ## 样例（samples）
 
-![1](https://i.loli.net/2021/07/19/5Kv4xTfXQza8yFC.png)
+![1](https://i.loli.net/2021/07/19/xFHNAzykSqICgpR.png)
 
 ## 功能支持（Support functions）
 

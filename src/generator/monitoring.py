@@ -93,10 +93,10 @@ class Monitor:
             mesh = list(range(0,self.components.domain.grid+1,np.floor(self.components.domain.grid/(boundary_num-1)).astype(np.int64)))
             if mesh[-1]==self.components.domain.grid:
                 mesh[-1]-=1
-        position[mesh, 0] = 1
-        position[0, mesh] = 1
-        position[self.components.domain.grid-1, mesh] = 1
-        position[mesh, self.components.domain.grid-1] = 1
+        position[mesh, 1] = 1
+        position[1, mesh] = 1
+        position[self.components.domain.grid-2, mesh] = 1
+        position[mesh, self.components.domain.grid-2] = 1
 
         # on other region
         assert region_num in range(0, region_max)
