@@ -1,0 +1,14 @@
+*.png
+*.pvd
+*.vtu
+heat_gaussian/
+src/__pycache__
+src/config/__pycache__
+src/data/__pycache__
+src/generator/__pycache__
+src/plot/__pycache__
+src/version/__pycache__
+example_dataset/
+example*/
+config/
+output/

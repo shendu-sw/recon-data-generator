@@ -1,0 +1,8 @@
+tqdm
+scipy>=1.0
+matplotlib
+configargparse>=1.2
+pyyaml>=5.3
+h5py
+fenics
+black
