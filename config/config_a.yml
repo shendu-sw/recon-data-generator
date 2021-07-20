@@ -90,8 +90,14 @@ positions:
     
 gaussian_param: 1 # parameter in gaussian power distribution
 
+# Sampling monitoring points
+monitoring_sampling:
+    #- ['random', 10]
+    - ['center', 5, 10, 1]
+    #- ['uniform', 5, 5]
+
 # special samples
-special: True
+special: n # 'n' descripes no special, 'y' describes special samples
 special_num: 10
 
 # utils

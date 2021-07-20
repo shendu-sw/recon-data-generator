@@ -96,12 +96,22 @@ positions:
 
 gaussian_param: 1 # parameter in gaussian power distribution
 
+# Sampling monitoring points
+monitoring_sampling:
+    #- ['random', 10]
+    - ['center', 5, 10]
+    #- ['uniform', 5, 5]
+
 # utils
 data_dir: example_datasetb
 file_format: mat
 prefix: Example
 sample_n: 2
 # seed: 100
+
+# special samples
+special: n # 'n' descripes no special, 'y' describes special samples
+special_num: 10
 
 fem_degree: 1
 

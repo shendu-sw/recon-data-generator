@@ -21,6 +21,9 @@ from src.generator.sampling import get_task_powers_sampling
 from src.generator.monitoring import Monitor
 
 
+TOL = 1e-5
+
+
 def generate_from_cli(options: configargparse.Namespace):
     """Generate from cli with options.
 

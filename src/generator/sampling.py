@@ -82,7 +82,7 @@ class FMatrix:
 
         for num, size_i, int_i, angle_i, geo_i, pd_i, pos_i in zip(range(0,self.components.number), self.components.size, self.sample_power, self.components.angle, self.components.geometry, self.components.power_distribution, self.components.position):
             # special heat source components
-            if self.components.special and self.components.special_num == self.components.number:
+            if self.components.special == "y" and self.components.special_num == self.components.number:
                 int_i = constant_power
             elif num in special_zero:
                 continue
@@ -226,9 +226,9 @@ class FMatrix:
 def special_random_num(
     num: int,
     num_zero: int,
-    special='shut',
+    special='n',
 ):
-    if special == 'on':
+    if special == 'y':
         s = [x for x in range(0,num)]
         import random
         random.shuffle(s)
@@ -311,7 +311,7 @@ def get_task_powers_sampling(
     intensity: Sequence,
     power_distribution: Sequence,
     position: Sequence,
-    special='shut',
+    special: str = "n",
     special_num=0,
     gaussian_param=1,
     rad=True,

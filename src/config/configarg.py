@@ -77,7 +77,7 @@ def get_parser_common(parser: configargparse.ArgumentParser, config_name: str):
         version=f"layout-generator version: {__version__}",
     )
     parser.add(
-        "--task", help="task", choices=["discrete", "continuous"], type=str
+        "--task", help="task", choices=["continuous"], type=str
     )
     return parser
 
@@ -132,8 +132,8 @@ def get_parser_continuous_power(
     )
     parser.add(
         "--special",
-        type=type, 
-        default='off',
+        type=str, 
+        choices=['n','y'],
         help="generate special samples or not",
     )
     parser.add(

@@ -12,7 +12,11 @@ from functools import partial
 from pathlib import Path
 import tqdm
 from multiprocessing import Pool
-import scipy.io as sio 
+import scipy.io as sio
+import numpy as np
+
+
+TOL = 1e-14
 
 
 def plot_mat(
@@ -20,7 +24,7 @@ def plot_mat(
     plot=True,
     save=False,
     worker=None,
-    figkwargs={"figsize": (18, 5)},
+    figkwargs={"figsize": (21, 5)},
 ):
     """Plot mat files.
 
@@ -40,27 +44,28 @@ def plot_mat(
     mat = sio.loadmat(mat_path)
     xs, ys, u, F, u_obs, obs_m = mat["xs"], mat["ys"], mat["u"], mat["F"], mat["u_obs"], mat["obs_m"]
 
-    xs = xs/0.1*200
-    ys = ys/0.1*200
+    xs = xs
+    ys = ys
 
     fig = plt.figure(**figkwargs)
     plt.subplot(132)
-    img = plt.pcolormesh(ys, xs, u, shading='auto')
+    # img = plt.pcolormesh(ys, xs, u, shading='auto')
+    img = plt.contourf(ys, xs, u, levels=150,cmap='jet')
     plt.colorbar(img)
     plt.axis("image")
-    plt.title("U")
+    plt.title("Real Temperature Field")
 
     plt.subplot(131)
     img = plt.pcolormesh(ys, xs, F, shading='auto')
     plt.colorbar(img)
     plt.axis("image")
-    plt.title("F")
+    plt.title("Heat Source System")
 
     plt.subplot(133)
-    img = plt.pcolormesh(ys, xs, u_obs, shading='auto')
+    img = plt.contourf(ys, xs, u_obs, levels=150,cmap='jet')
     plt.colorbar(img)
     plt.axis("image")
-    plt.title("u_obs")
+    plt.title("Monitoring Points")
 
     if plot:
         plt.show()
