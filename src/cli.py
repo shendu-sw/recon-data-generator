@@ -73,40 +73,9 @@ def main(debug=False, options_flag=False):
         handle=handle_generate, parser=generate_parser
     )
 
-    '''generate_c_parser = subparsers.add_parser(
-        "generate_c", help="generate continuous layout data"
-    )
-    generate_c_parser = get_parser_continuous(generate_c_parser)
-    generate_c_parser.set_defaults(
-        handle=handle_generate_c, parser=generate_c_parser
-    )
-
-    generate_c_power_parser = subparsers.add_parser(
-        "generate_c_power",
-        help="generate continuous layout data with sampling component powers",
-    )
-    generate_c_power_parser = get_parser_continuous_power(
-        generate_c_power_parser
-    )
-    generate_c_power_parser.set_defaults(
-        handle=handle_generate_c_power, parser=generate_c_power_parser
-    )'''
-
     plot_parser = subparsers.add_parser("plot", help="plot layout data")
     plot_parser = get_plot_parser(plot_parser)
     plot_parser.set_defaults(handle=handle_plot)
-
-    '''convert_parser = subparsers.add_parser(
-        "convert", help="convert layout data"
-    )
-    convert_parser = get_convert_parser(convert_parser)
-    convert_parser.set_defaults(handle=handle_convert)
-
-    makeconfig_parser = subparsers.add_parser(
-        "makeconfig", help="make template config"
-    )
-    makeconfig_parser = get_parser_makeconfig(makeconfig_parser)
-    makeconfig_parser.set_defaults(handle=handle_makeconfig)'''
 
     options, _ = parser.parse_known_args()
 
