@@ -9,7 +9,7 @@ Desc      :   meta info.
 
 
 __package_name__ = "data-generator"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __author__ = "Zhiqiang Gong"
 __licence__ = "LGPL-3.0"
 __desp__ = "Field reconstruction data generator."

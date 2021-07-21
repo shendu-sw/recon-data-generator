@@ -42,7 +42,7 @@ def plot_mat(
         plot_dir(mat_path, save, worker)
         return
     mat = sio.loadmat(mat_path)
-    xs, ys, u, F, u_obs, obs_m = mat["xs"], mat["ys"], mat["u"], mat["F"], mat["u_obs"], mat["obs_m"]
+    xs, ys, u, F, u_obs = mat["xs"], mat["ys"], mat["u"], mat["F"], mat["u_obs"]
 
     xs = xs
     ys = ys

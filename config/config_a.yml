@@ -93,7 +93,7 @@ gaussian_param: 1 # parameter in gaussian power distribution
 # Sampling monitoring points
 monitoring_sampling:
     #- ['random', 10]
-    - ['center', 5, 10, 1]
+    - ['center', 1, 3, 10]
     #- ['uniform', 5, 5]
 
 # special samples

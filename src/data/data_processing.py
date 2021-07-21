@@ -43,7 +43,7 @@ def save_mat(path, U, xs, ys, F, U_obs, monitoring, zs=None):
         "zs": zs,
         "F": F,
         "u_obs": U_obs,
-        "obs_m": monitoring
+        "u_pos": monitoring
     }
     sio.savemat(path, data)
 

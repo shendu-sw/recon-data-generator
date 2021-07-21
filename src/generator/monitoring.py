@@ -8,6 +8,9 @@ Desc      :   Place monitoring points on layout domain.
 # Contact :   gongzhiqiang13@nudt.edu.cn
 
 import numpy as np
+import scipy.io as sio
+from os import path
+
 from src.data.base import Components, Domain
 from .sampling import TaskPowersSampling, FMatrix
 
@@ -43,8 +46,13 @@ class Monitor:
             region_num = 0 if (len(self.sampling_strategy) in [2,3]) else self.sampling_strategy[3]
             position = self.center_sampling(center_num, boundary_num, region_num)
         
+        elif self.sampling_strategy[0] == 'file':
+            assert (len(self.sampling_strategy) == 2), 'Error file input!'
+            assert path.exists(self.sampling_strategy[1])
+            position = self.from_mat(self.sampling_strategy[1])
+
         else:
-            LookupError(f'Sampling strategy {self.sampling_strategy[0]} is not supported (random,uniform,center)!')
+            raise LookupError(f'Sampling strategy {self.sampling_strategy[0]} is not supported (random,uniform,center,file)!')
 
         return position
 
@@ -134,5 +142,31 @@ class Monitor:
         
         monitoring_mesh = np.meshgrid(np.array(grid_x),np.array(grid_y))
         position[tuple(monitoring_mesh)] = 1
+
+        return position
+
+    def from_mat(self, load_path):
+        # read the monitoring points
+        data = sio.loadmat(load_path)
+
+        pos = np.zeros(1)
+
+        if "u_pos" in data:
+            pos = np.array(data['u_pos'])
+        elif len(list(data.keys())) == 1:
+            pos = np.array(data[list(data.keys())[0]])
+        else:
+            raise LookupError('Mat format is wrong')
+        assert pos.ndim == 2, 'Mat format is wrong'
+
+        if pos.shape[1] == 2:
+            assert (pos < self.components.domain.grid).all() and (pos > -TOL).all(), "Monitoring positions are out of domain"
+            position = np.zeros((self.components.domain.grid, self.components.domain.grid))
+            position[tuple(np.transpose(pos))] = 1
+        elif pos.shape[1] == self.components.domain.grid and pos.shape[0] == self.components.domain.grid:
+            pos[np.where(pos>TOL)] = 1
+            position = pos
+        else:
+            raise ValueError('Wrong monitoring positions')
 
         return position
