@@ -23,6 +23,7 @@ here = Path(__file__).resolve().parent
 def get_parser_common(parser: configargparse.ArgumentParser, config_name: str):
     config_path = here / config_name
     assert config_path.exists(), "Config do not exist!"
+    print(config_path)
 
     parser._config_file_parser = configargparse.YAMLConfigFileParser()
     parser._default_config_files = [str(config_path)]
@@ -132,8 +133,9 @@ def get_parser_continuous_power(
     )
     parser.add(
         "--special",
-        type=str, 
+        type=str,
         choices=['n','y'],
+        default='n',
         help="generate special samples or not",
     )
     parser.add(
