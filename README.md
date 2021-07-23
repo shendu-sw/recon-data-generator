@@ -45,6 +45,7 @@
         * [x] random
         * [x] uniform
         * [x] center
+        * [x] from_mat（从mat文件中读取，默认读取变量为u_pos）
     * [ ] 特殊样本
         * [x] 打开关闭（special）
         * [x] 特殊组件数量（功率为0的组件数量，全部组件情况为所有组件功率相同）
