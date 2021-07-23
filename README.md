@@ -1,5 +1,7 @@
 # Data Generator for Temperature Field Reconstruction of Heat Source Systems
 
+![](https://img.shields.io/github/issues/shendu-sw/recon-data-generator)![](https://img.shields.io/github/license/shendu-sw/recon-data-generator)
+
 > This project is based on [FEniCS](https://fenicsproject.org) and used for data generation of temperature field reconstruction samples.
 
 ## 样例（samples）
