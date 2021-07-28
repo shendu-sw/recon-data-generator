@@ -95,12 +95,12 @@
 * `data generate`执行如下命令
 
 ```python
-recon-data-generator generate
+recon_data_generator generate
 ```
 
 * `plot`执行如下命令
 
 ```
-recon-data-generator plot
+recon_data_generator plot
 ```
 
