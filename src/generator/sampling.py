@@ -55,6 +55,28 @@ class TaskPowersSampling(Task):
                         raise ValueError(
                             "The data format of powers is not right."
                         )
+                elif p[0] == "normal":
+                    intensity.append(
+                        np.random.normal(p[1], p[2])
+                    )
+                elif p[0] == "lognormal":
+                    mean = p[1]
+                    std = p[2]
+                    var = std ** 2
+                    mu = math.log(mean ** 2 / math.sqrt(mean ** 2 + var))
+                    std = math.sqrt(math.log(1 + var / mean ** 2))
+                    intensity.append(
+                        np.random.lognormal(mu, std)
+                    )
+                elif p[0] == "gumbel":
+                    mean = p[1]
+                    std = p[2]
+                    var = std ** 2
+                    belta = math.sqrt(6 * var / (math.pi ** 2))
+                    mu = mean - 0.57721 * belta
+                    intensity.append(
+                        np.random.gumbel(mu, belta)
+                    )
                 else:
                     raise LookupError(f"Method {p[0]} does not supported!")
             else:
