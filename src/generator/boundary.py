@@ -110,7 +110,7 @@ class SineBoundary:
             degree=2, t0=self.interval[0,0],length=length, um=self.um, u0=self.u0) \
             if self.length[1]<TOL else \
             fs.Expression('um*sin((x[1]-t0)*pi/length)+u0', \
-            degree=2, t0=self.interval[1,0],length=length, um=self.um, u0=self.u0)
+            degree=2, t0=self.interval[0,1],length=length, um=self.um, u0=self.u0)
         return u_D
 
     def get_boundary(self):
