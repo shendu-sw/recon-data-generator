@@ -2,38 +2,38 @@
 
 ![](https://img.shields.io/github/issues/shendu-sw/recon-data-generator)![](https://img.shields.io/github/license/shendu-sw/recon-data-generator)
 
-> This project is based on [FEniCS](https://fenicsproject.org) and used for data generation of temperature field reconstruction samples.
+> This project is based on [FEniCS](https://fenicsproject.org) and used for data generation of temperature field reconstruction samples. This data generator mainly supports the paper "[TFRD: A Benchmark Dataset for Research on Temperature Field Reconstruction of Heat-Source Systems](https://arxiv.org/abs/2108.08298)"
 
-## 样例（samples）
+## samples
 
 ![1](https://i.loli.net/2021/07/19/xFHNAzykSqICgpR.png)
 
-## 功能支持（Support functions）
+## Support functions
 
-* 可配置选项
-    * [ ] 布局板尺寸
-        * [x] 二维
-            * [x] 长（length）
-            * [x] 宽（默认等于length）
-    * [ ] 网格尺寸
-        * [x] 离散网格数量（nx）
-    * [ ] 边界条件（bcs）
-        * [x] Dirichlet BC 小孔边界
-        * [x] Dirichlet BC sine-wave边界
-        * [x] Neumann BC
-    * [ ] 组件特征
-        * [ ] 组件类型
+* Configurations
+    * [ ] Size of board
+        * [x] 2-D
+            * [x] length
+            * [x] width (default: equal to length）
+    * [ ] Scale Number
+        * [x] mesh grid（nx）
+    * [ ] Boundary Conditions（bcs）
+        * [x] Heat Sink (Dirichlet BC) 
+        * [x] Sine function boundary (Dirichlet BC )
+        * [x] default (Neumann BC)
+    * [ ] Components
+        * [ ] type
             * [x] rectangle
             * [x] circle
             * [x] capsule
             * [ ] triangle
-        * [ ] 组件大小（units）
-            * [x] 长
-            * [x] 宽
-        * [ ] 功率（powers）
-            * [x] 固定值
-            * [x] 多选一
-            * [x] uniform采样
+        * [ ] size of units
+            * [x] length
+            * [x] width
+        * [ ] powers
+            * [x] constant
+            * [x] one from a given set
+            * [x] uniform sampling
         * [ ] 功率类型
             * [x] 固定功率
             * [x] 高斯分布功率
@@ -52,7 +52,7 @@
         * [x] 打开关闭（special）
         * [x] 特殊组件数量（功率为0的组件数量，全部组件情况为所有组件功率相同）
 
-## 安装方式
+## Installation
 
 本生成器依赖 fenics 作为有限元求解器，可参照 [fenics 安装文档](https://fenicsproject.org/download/)，推荐以下**两种**方式安装，如果没有 docker 使用经验推荐 Anaconda 方式
 
@@ -90,7 +90,7 @@
 
 - 如果按照以上 anaconda 安装方式，别忘了切换到 `fenicsproject` 环境
 
-## 快速入门 (Easy Starting)
+## Easy Starting
 
 * `data generate`执行如下命令
 
