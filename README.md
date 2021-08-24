@@ -4,7 +4,7 @@
 
 > This project is based on [FEniCS](https://fenicsproject.org) and used for data generation of temperature field reconstruction samples. This data generator mainly supports the paper "[TFRD: A Benchmark Dataset for Research on Temperature Field Reconstruction of Heat-Source Systems](https://arxiv.org/abs/2108.08298)"
 
-## samples
+## Samples
 
 ![1](https://i.loli.net/2021/07/19/xFHNAzykSqICgpR.png)
 
@@ -13,19 +13,19 @@
 * Configurations
     * [ ] Size of board
         * [x] 2-D
-            * [x] length
-            * [x] width (default: equal to length）
+            * [x] `length`
+            * [x] `width` (default: equal to length）
     * [ ] Scale Number
-        * [x] mesh grid（nx）
-    * [ ] Boundary Conditions（bcs）
+        * [x] mesh grid（`nx`）
+    * [ ] Boundary Conditions（`bcs`）
         * [x] Heat Sink (Dirichlet BC) 
         * [x] Sine function boundary (Dirichlet BC )
         * [x] default (Neumann BC)
     * [ ] Components
         * [ ] type
-            * [x] rectangle
-            * [x] circle
-            * [x] capsule
+            * [x] `rectangle`
+            * [x] `circle`
+            * [x] `capsule`
             * [ ] triangle
         * [ ] size of units
             * [x] length
@@ -89,6 +89,15 @@
 - 仅支持 Python3.6 以上版本
 
 - 如果按照以上 anaconda 安装方式，别忘了切换到 `fenicsproject` 环境
+
+## Visualization
+
+* 可视化生成配置文件入口`config_generate.html`
+* For example:
+
+| ![image-20210824224114153](https://i.loli.net/2021/08/24/qw2gyjI8sVld49v.png) | ![Example0](https://i.loli.net/2021/08/24/xXi8s3tYSqlMNGh.png)![Example1](https://i.loli.net/2021/08/24/BsLKHjGm98FaTEZ.png) |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+|               heat source system visualization               |                  samples by data generator                   |
 
 ## Easy Starting
 
