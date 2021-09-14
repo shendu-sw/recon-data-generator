@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/issues/shendu-sw/recon-data-generator)![](https://img.shields.io/github/license/shendu-sw/recon-data-generator)
 
-> This project is based on [FEniCS](https://fenicsproject.org) and used for data generation of temperature field reconstruction samples. This data generator mainly supports the paper "[TFRD: A Benchmark Dataset for Research on Temperature Field Reconstruction of Heat-Source Systems](https://arxiv.org/abs/2108.08298)"
+> This project is based on [FEniCS](https://fenicsproject.org) and used for data generation of temperature field reconstruction samples. This data generator mainly supports the paper "[A Machine Learning Modelling Benchmark for Temperature Field Reconstruction of Heat-Source Systems](https://arxiv.org/abs/2108.08298)"
 
 ## Samples
 
