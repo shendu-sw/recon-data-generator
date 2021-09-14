@@ -11,44 +11,44 @@
 ## Support functions
 
 * Configurations
-    * [ ] Size of board
+    * [x] Size of board
         * [x] 2-D
             * [x] `length`
             * [x] `width` (default: equal to length）
-    * [ ] Scale Number
+    * [x] Scale Number
         * [x] mesh grid（`nx`）
-    * [ ] Boundary Conditions（`bcs`）
+    * [x] Boundary Conditions（`bcs`）
         * [x] Heat Sink (Dirichlet BC) 
         * [x] Sine function boundary (Dirichlet BC )
         * [x] default (Neumann BC)
-    * [ ] Components
-        * [ ] type
+    * [x] Components
+        * [x] type
             * [x] `rectangle`
             * [x] `circle`
             * [x] `capsule`
             * [ ] triangle
-        * [ ] size of units
+        * [x] size of units
             * [x] length
             * [x] width
-        * [ ] powers
+        * [x] powers
             * [x] constant
             * [x] one from a given set
             * [x] uniform sampling
-        * [ ] 功率类型
+        * [x] 功率类型
             * [x] 固定功率
             * [x] 高斯分布功率
-        * [ ] 组件位置和角度
+        * [x] 组件位置和角度
             * [x] 组件中心位置坐标（positions）
             * [x] 组件放置角度（angles）
         * [x] 组件数量
-    * [ ] 存储格式
+    * [x] 存储格式
         * [x] mat格式
-    * [ ] 测点选取策略
+    * [x] 测点选取策略
         * [x] random
         * [x] uniform
         * [x] center
         * [x] from_mat（从mat文件中读取，默认读取变量为u_pos）
-    * [ ] 特殊样本
+    * [x] 特殊样本
         * [x] 打开关闭（special）
         * [x] 特殊组件数量（功率为0的组件数量，全部组件情况为所有组件功率相同）
 
