@@ -33,16 +33,7 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=load_requirements(),
-    extras_require={
-        "doc": ["sphinx", "recommonmark", "sphinx-rtd-theme"],
-        "dev": [
-            "pytest>=3.6",
-            "pytest-shell",
-            "pytest-cov",
-            "codecov",
-            "bump2version",
-        ],
-    },
+    
     include_package_data=True,
     python_requires=">=3.6",
     entry_points={
