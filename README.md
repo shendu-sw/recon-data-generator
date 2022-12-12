@@ -113,3 +113,5 @@ recon_data_generator generate
 recon_data_generator plot
 ```
 
+## Temperature Field Reconstruction Dataset (TFRD)
+- Baidu netdisk: [link](https://pan.baidu.com/s/14BipTer1fkilbRjrQNbKiQ), Password: tfrd
